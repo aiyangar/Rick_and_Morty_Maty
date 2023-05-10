@@ -6,18 +6,23 @@
  const Card = ({id, name, status, species, gender, origin, image, onClose}) => {
   
    return (
-      <div className='cards'>
-           <button onClick={()=> {onClose(id)}}>Close</button>
-         <Link to={`/detail/${id}`}>
-         <div className='face front'>
-             <img src={image} alt="" />
+      <div className={style.card}>
+         
+         <div>
+            <button onClick={()=> {onClose(id)}}>Close</button>
          </div>
-         <div className='face back'>
-             <p>Name: "{name}"</p>
-             <p>Status: "{status}"</p>
-             <p>Species: "{species}"</p>
-             <p>Gender: "{gender}"</p>
-             <p>Origin: "{origin}"</p>
+         
+         <div>
+            <img src={image} alt="" />  
+            <p>Name: "{name}"</p>
+         </div>
+         
+         <Link to={`/detail/${id}`}>
+         <div className={style.contenido}>
+            <p>Status: "{status}"</p>
+            <p>Species: "{species}"</p>
+            <p>Gender: "{gender}"</p>
+            <p>Origin: "{origin}"</p>
          </div>
          </Link>
            
